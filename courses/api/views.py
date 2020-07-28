@@ -40,7 +40,7 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
     def enroll(self, request, *args, **kwargs):
         course = self.get_object()
         course.students.add(request.user)
-        return response({'enrolled': True})
+        return Response({'enrolled': True})
 
     @action(detail=True,
             methods=['get'],
